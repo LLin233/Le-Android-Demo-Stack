@@ -31,7 +31,6 @@ public class ItemDetailFragment extends Fragment {
         super.onDestroy();
         // Unregister
         EventBus.getDefault().unregister(this);
-
     }
 
     /**

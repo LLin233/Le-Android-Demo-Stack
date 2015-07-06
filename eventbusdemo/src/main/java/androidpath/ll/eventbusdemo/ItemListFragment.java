@@ -8,14 +8,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import androidpath.ll.eventbusdemo.Models.Event;
 import androidpath.ll.eventbusdemo.Models.Item;
 import de.greenrobot.event.EventBus;
+
+import static androidpath.ll.eventbusdemo.Models.Event.ItemListEvent;
 
 /**
  * Created by Le on 2015/5/26.
  */
 public class ItemListFragment extends ListFragment {
+
     protected DrawerLayout mDrawerLayout;
     protected View mDrawer;
 
@@ -27,8 +29,8 @@ public class ItemListFragment extends ListFragment {
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
         mDrawerLayout = (DrawerLayout) getActivity().findViewById(R.id.drawer_layout);
         mDrawer = (View) getActivity().findViewById(R.id.drawer);
     }
@@ -38,30 +40,33 @@ public class ItemListFragment extends ListFragment {
         super.onDestroy();
         // Unregister
         EventBus.getDefault().unregister(this);
-
     }
 
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+        //called after onCreateView()
         super.onViewCreated(view, savedInstanceState);
 
         // open a thread to load list
+
+        /**
+         *  Posts the given event to the event bus and wait for onEvent method to consume it. {@link #onEventMainThread(ItemListEvent)}
+         */
         new Thread() {
             public void run() {
                 try {
-                    Thread.sleep(2000); // fake loading list from server
-                    EventBus.getDefault().post(new Event.ItemListEvent(Item.ITEMS)); // Posts the given event to the event bus
+                    Thread.sleep(2000 * 5); // pretend to load a updated list from server
+                    ItemListEvent requestedListEvent = new ItemListEvent(Item.ITEMS); //build an event contains list we have got from the server.
+                    EventBus.getDefault().post(requestedListEvent);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-
-            ;
         }.start();
     }
 
-    public void onEventMainThread(Event.ItemListEvent event) {
+    public void onEventMainThread(ItemListEvent event) {
         setListAdapter(new ArrayAdapter<Item>(getActivity(),
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1, event.getItems()));

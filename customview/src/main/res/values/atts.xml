@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TopActionBar">
+        <!--Text-->
+        <attr name="titleText" format="string"/>
+        <attr name="leftText" format="string"/>
+        <attr name="rightText" format="string"/>
+
+        <!--Text Size-->
+        <attr name="titleTextSize" format="dimension"/>
+
+        <!--Color-->
+        <attr name="titleTextColor" format="color"/>
+        <attr name="rightTextColor" format="color"/>
+        <attr name="leftTextColor" format="color"/>
+
+        <!--Background-->
+        <attr name="mainBarBackground" format="reference|color"/>
+        <attr name="leftBackground" format="reference|color"/>
+        <attr name="rightBackground" format="reference|color"/>
+    </declare-styleable>
+</resources>

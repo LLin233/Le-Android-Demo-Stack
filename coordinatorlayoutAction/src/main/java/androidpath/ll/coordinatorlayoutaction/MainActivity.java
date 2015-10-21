@@ -31,12 +31,14 @@ public class MainActivity extends AppCompatActivity implements
     private void buildActionsList() {
         mItems = new String[]{
                 "Simple Behavior",
-                "Quicker Hide"
+                "Quicker Hide",
+                "Footer View Return"
         };
 
         mActions = new Intent[]{
                 new Intent(this, SimpleBehaviorActivity.class),
                 new Intent(this, QuickerHideActivity.class),
+                new Intent(this, FooterbarActivity.class),
 
         };
     }

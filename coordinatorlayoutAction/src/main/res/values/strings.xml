@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CoordinatorLayoutAction</string>
+    <string name="title_activity_footerbar">FooterbarActivity</string>
 </resources>

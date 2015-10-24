@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">CoordinatorLayoutAction</string>
     <string name="title_activity_footerbar">FooterbarActivity</string>
+    <string name="title_activity_sliding_cards">SlidingCardsActivity</string>
 </resources>

@@ -32,13 +32,15 @@ public class MainActivity extends AppCompatActivity implements
         mItems = new String[]{
                 "Simple Behavior",
                 "Quicker Hide",
-                "Footer View Return"
+                "Footer View Return",
+                "Cards"
         };
 
         mActions = new Intent[]{
                 new Intent(this, SimpleBehaviorActivity.class),
                 new Intent(this, QuickerHideActivity.class),
                 new Intent(this, FooterbarActivity.class),
+                new Intent(this, SlidingCardsActivity.class),
 
         };
     }

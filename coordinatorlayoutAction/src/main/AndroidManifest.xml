@@ -35,6 +35,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="androidpath.ll.coordinatorlayoutaction.MainActivity"/>
         </activity>
+        <activity
+            android:name=".SlidingCardsActivity"
+            android:label="@string/title_activity_sliding_cards"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="androidpath.ll.coordinatorlayoutaction.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>

@@ -1,1 +1,1 @@
-include ':eventbusdemo', ':servicedemo', ':PListView', ':gallery', ':customview', ':processbutton', ':viewinjectdemo', ':coordinatorlayoutaction'
+include ':eventbusdemo', ':servicedemo', ':PListView', ':gallery', ':customview', ':processbutton', ':viewinjectdemo', ':coordinatorlayoutaction', ':Hackdemo'

@@ -4,6 +4,7 @@ package androidpath.ll.hackdemo;
 import android.os.Bundle;
 import android.view.View;
 
+import androidpath.ll.hackdemo.lazyloading.LazyLoadingAvtivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -18,6 +19,6 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.btn_lazy_loading)
     public void goToLazyLoadingDemo(View view) {
-        actionStart(MainActivity.this, TestActivity.class);
+        actionStart(MainActivity.this, LazyLoadingAvtivity.class);
     }
 }

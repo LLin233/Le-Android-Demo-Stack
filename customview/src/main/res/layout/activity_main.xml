@@ -1,28 +1,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="#FFFFFF"
               android:orientation="vertical">
 
-    <androidpath.ll.customview.TopActionBar
-        android:id="@+id/topbar"
+    <Button
+        android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="50dp"
-        app:leftBackground="@drawable/blue_button"
-        app:leftText=" Back "
-        app:rightBackground="@drawable/blue_button"
-        app:mainBarBackground="#ff5ab8fd"
-        app:rightText=" More "
-        app:titleText=" Title"
-        app:titleTextColor="#ffffff"
-        app:titleTextSize="8sp"/>
+        android:text="Blink Cycle"/>
 
-    <androidpath.ll.customview.CustomView
-        android:id="@+id/main_cv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Processing String"/>
 
 
 </LinearLayout>

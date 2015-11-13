@@ -1,47 +1,43 @@
 package androidpath.ll.customview;
 
-import android.annotation.SuppressLint;
-import android.os.Handler;
-import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.LinearLayout;
-import android.widget.Toast;
+import android.support.v7.app.AppCompatActivity;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
-    private CustomView mCustomView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TopActionBar bar = (TopActionBar) findViewById(R.id.topbar);
-
-        //bar.setLeftButtonVisable(false);
-
-        bar.setOnTopActionBarClickListener(new TopActionBar.topActionBarClickListener() {
-            @Override
-            public void onLeftClick() {
-                Toast.makeText(MainActivity.this, "Left", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onRightClick() {
-                Toast.makeText(MainActivity.this, "Right", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-        mCustomView = (CustomView) findViewById(R.id.main_cv);
-        new Thread(mCustomView).start();
-
+        ButterKnife.bind(this);
     }
+
+    @OnClick(R.id.view1)
+    void startDemoView1() {
+        actionStart(MainActivity.this, BlinkCycleActivity.class);
+    }
+
+    @OnClick(R.id.view2)
+    void startDemoView2() {
+        actionStart(MainActivity.this, ProcessingActivity.class);
+    }
+
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
     }
+
+    public void actionStart(Context context, Class<?> classname) {
+        Intent intent = new Intent(context, classname);
+        context.startActivity(intent);
+    }
+
 }
+
